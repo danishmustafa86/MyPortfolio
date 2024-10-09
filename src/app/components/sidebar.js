@@ -61,7 +61,6 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <Image src={Linkedin} alt="LinkedIn" width={20} height={20} style={iconStyle} />
-        LinkedIn
       </a>
 
       <a
@@ -73,7 +72,6 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <Image src={Github} alt="GitHub" width={20} height={20} style={iconStyle} />
-        GitHub
       </a>
 
       <a
@@ -85,7 +83,6 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <Image src={Twitter} alt="Twitter" width={20} height={20} style={iconStyle} />
-        Twitter
       </a>
 
       <a
@@ -97,7 +94,6 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <Image src={Instagram} alt="Instagram" width={20} height={20} style={iconStyle} />
-        Instagram
       </a>
 
       <a
@@ -109,7 +105,6 @@ const Sidebar = () => {
         onMouseLeave={handleMouseLeave}
       >
         <Image src={Facebook} alt="Facebook" width={20} height={20} style={iconStyle} />
-        Facebook
       </a>
     </div>
   );
