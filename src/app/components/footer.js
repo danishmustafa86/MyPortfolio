@@ -63,7 +63,7 @@ const Footer = () => {
       <div style={sectionStyle}>
         <div style={aboutMeStyle}>
           <Image src={MyImage} alt="About Me" width={50} height={50} style={imageStyle} />
-          <p>I'm a passionate developer who loves coding and problem-solving!</p>
+          <p>I&apos;m a passionate developer who loves coding and problem-solving!</p> {/* Use &apos; for the apostrophe */}
         </div>
         <div style={{ display: 'flex', justifyContent: 'right', marginRight: "40px", alignItems: 'left' }}>
           <a href="https://www.linkedin.com/in/danishmustafa86/" target="_blank" rel="noopener noreferrer">

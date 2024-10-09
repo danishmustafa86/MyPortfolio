@@ -31,7 +31,7 @@ export default function About() {
           </div>
           <div className="quote" style={styles.quoteDiv}>
             <blockquote style={styles.quote}>
-              "The best way to predict the future is to create it."
+              &quot;The best way to predict the future is to create it.&quot; {/* Escape quotes */}
             </blockquote>
           </div>
         </div>
