@@ -1,31 +1,3 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
 
 .main {
   display: flex;
@@ -162,4 +134,52 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+
+
+/* background iamge cssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
+
+.page {
+  font-family: Arial, sans-serif;
+}
+
+.imageContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('../app/components/images/bg1.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: To make text more readable */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.textOverlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.textOverlay p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+.footer{
+  height: 400px;
 }

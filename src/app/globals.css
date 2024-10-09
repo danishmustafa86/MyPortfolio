@@ -17,8 +17,9 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: White;
   background: var(--background);
+  background-color: black;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,6 +31,7 @@ body {
   margin: 0;
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -39,4 +41,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+.quote {
+  position: relative;
+  left: 50%
 }
