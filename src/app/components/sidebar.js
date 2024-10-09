@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image'; // Use Next.js Image for optimization
 import Facebook from "@/app/components/images/facebook.png";
 import Twitter from "@/app/components/images/tweet.png";
 import Github from "@/app/components/images/github.png";
@@ -19,9 +20,7 @@ const Sidebar = () => {
     padding: '5px',
     backgroundColor: '#333',
     borderRadius: '0 8px 8px 0',
-    zIndex: 1000, // Added zIndex to keep it above other components
-    // width: '50px', // Set your desired width here
-
+    zIndex: 1000, // Keeps sidebar above other components
   };
 
   const linkStyle = {
@@ -53,8 +52,7 @@ const Sidebar = () => {
         onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
         onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
       >
-        <img src={Linkedin.src} alt="LinkedIn" style={iconStyle} />
-        {/* LinkedIn */}
+        <Image src={Linkedin} alt="LinkedIn" width={20} height={20} style={iconStyle} />
       </a>
 
       <a
@@ -65,8 +63,7 @@ const Sidebar = () => {
         onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
         onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
       >
-        <img src={Github.src} alt="GitHub" style={iconStyle} />
-        {/* GitHub */}
+        <Image src={Github} alt="GitHub" width={20} height={20} style={iconStyle} />
       </a>
 
       <a
@@ -77,8 +74,7 @@ const Sidebar = () => {
         onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
         onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
       >
-        <img src={Twitter.src} alt="Twitter" style={iconStyle} />
-        {/* Twitter */}
+        <Image src={Twitter} alt="Twitter" width={20} height={20} style={iconStyle} />
       </a>
 
       <a
@@ -89,8 +85,7 @@ const Sidebar = () => {
         onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
         onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
       >
-        <img src={Instagram.src} alt="Instagram" style={iconStyle} />
-        {/* Instagram */}
+        <Image src={Instagram} alt="Instagram" width={20} height={20} style={iconStyle} />
       </a>
 
       <a
@@ -101,8 +96,7 @@ const Sidebar = () => {
         onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
         onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
       >
-        <img src={Facebook.src} alt="Facebook" style={iconStyle} />
-        {/* Facebook */}
+        <Image src={Facebook} alt="Facebook" width={20} height={20} style={iconStyle} />
       </a>
     </div>
   );

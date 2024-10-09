@@ -1,5 +1,7 @@
 "use client";
 import { useState } from 'react';
+import Image from 'next/image'
+
 // import Navbar from "@/app/components/navbar";
 // import Footer from "@/app/components/footer";// Your background image
 

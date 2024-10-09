@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Image from "@/app/components/images/myimage.jpg";
+import Image from 'next/image';  // Correct Next.js image component
+import myImage from "@/app/components/images/myimage.jpg";  // Correct image import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,8 @@ const Navbar = () => {
   return (
     <nav style={styles.navbar}>
       <div style={styles.navbarContainer}>
-        <img src={Image.src} alt="Profile" style={styles.profileImage} />
+        {/* Use Next.js Image for optimized loading */}
+        <Image src={myImage} alt="Profile" width={50} height={50} style={styles.profileImage} />
         <div style={styles.navbarLogo}>My Portfolio</div>
         <button style={styles.hamburger} onClick={toggleMenu}>
           <span style={styles.hamburgerLine}></span>
@@ -36,6 +38,35 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+
+      {/* Media queries for responsive navbar */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .navbarLinks {
+            display: none;
+          }
+          .navbarLinks.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+          }
+          .hamburger {
+            display: flex;
+          }
+          .navItem {
+            width: 100%;
+          }
+          .navLink {
+            text-align: center;
+            padding: 15px;
+          }
+        }
+      `}</style>
     </nav>
   );
 };
@@ -61,9 +92,6 @@ const styles = {
   },
   profileImage: {
     borderRadius: '50%',
-    width: '50px',
-    height: '50px',
-    marginRight: '10px',
     transition: 'transform 0.3s',
   },
   navbarLogo: {
@@ -73,7 +101,7 @@ const styles = {
     flexGrow: 1,
   },
   hamburger: {
-    display: 'none', // Hidden on larger screens
+    display: 'none',
     flexDirection: 'column',
     background: 'transparent',
     border: 'none',
@@ -90,12 +118,12 @@ const styles = {
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    flexGrow: 1, // Allow links to grow
-    justifyContent: 'flex-end', // Align links to the right
+    flexGrow: 1,
+    justifyContent: 'flex-end',
   },
   navItem: {
-    flex: '1', // Ensure each item takes equal space
-    textAlign: 'center', // Center text
+    flex: '1',
+    textAlign: 'center',
   },
   navLink: {
     color: 'white',
@@ -106,44 +134,16 @@ const styles = {
     transition: 'color 0.3s',
   },
   open: {
-    display: 'flex', // Show links when the menu is open
+    display: 'flex',
     position: 'absolute',
-    top: '60px', // Adjust position based on navbar height
+    top: '60px',
     left: '0',
     width: '100%',
     backgroundColor: '#333',
     flexDirection: 'column',
-    zIndex: 100, // Ensure dropdown is above other elements
+    zIndex: 100,
     padding: '10px 0',
   },
-  close: {
-    display: 'none', // Hide when menu is closed
-  },
 };
-
-// Media Queries for Responsiveness
-const mediaQueryStyles = `
-  @media (max-width: 768px) {
-    .navbarLinks {
-      display: none; // Hide by default
-    }
-    .navbarLinks.open {
-      display: flex; // Show when open
-    }
-    .hamburger {
-      display: flex; // Show hamburger on small screens
-    }
-    .navItem {
-      width: 100%; // Full width for items
-    }
-    .navLink {
-      padding: 15px; // Increase padding for touch targets
-      text-align: center; // Center align text
-    }
-  }
-`;
-
-// Optionally, you can inject the media query styles using a <style> tag in your component
-// by using a ref or inserting it directly into the <head> of your document in _app.js.
 
 export default Navbar;

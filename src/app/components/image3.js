@@ -5,19 +5,19 @@ import React from 'react';
 import bgImage from "@/app/components/images/bg1.jpg"; // Import your specific image
 import profilePic from "@/app/components/images/myimage.jpg"; // Import your profile picture
 
-const ImageComponent = ({ alt = "Background Image" }) => { // Provide a default value for alt
+const ImageComponent = ({ alt = "Background Image" }) => {
   return (
     <div style={styles.container}>
       <Image 
         src={bgImage} // Use the imported background image
         alt={alt} // Use the passed or default alt value
-        fill // Updated for Next.js 13 (replaces layout="fill")
-        style={{ objectFit: "cover" }} // Updated for Next.js 13 (replaces objectFit)
+        fill // Next.js 13+ optimization (replaces layout="fill")
+        style={{ objectFit: "cover" }} // Style for responsive image
         className="responsive-image" 
-        priority 
+        priority // Ensures the image loads quickly
       />
       <div style={styles.contentContainer}>
-      <div style={styles.leftSection}>
+        <div style={styles.leftSection}>
           {/* Text Section */}
           <h1 style={styles.name}>Danish Mustafa</h1>
           <p style={styles.description}>
@@ -28,12 +28,12 @@ const ImageComponent = ({ alt = "Background Image" }) => { // Provide a default 
           {/* Profile Picture */}
           <Image 
             src={profilePic} // Use the imported profile image
-            alt="Profile Picture" // Explicit alt for profile picture
-            width={300} 
-            height={300} 
+            alt="Profile Picture" // Alt text for accessibility
+            width={300} // Specify width
+            height={300} // Specify height
             style={styles.profilePic}
+            priority // Ensures profile picture loads fast
           />
-
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ const styles = {
     height: '100%', // Fill the viewport
     zIndex: 1, // Ensure the content is above the image
   },
-   rightSection: {
+  rightSection: {
     flex: 1,
     display: 'flex',
     justifyContent: 'center',

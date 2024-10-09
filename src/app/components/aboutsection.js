@@ -3,6 +3,8 @@
 // import Footer from "@/app/components/footer";// Your background image
 
 import { useState } from 'react';
+import Image from 'next/image'
+
 
 export default function About() {
   const [skills] = useState([

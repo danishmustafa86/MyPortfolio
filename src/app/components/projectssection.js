@@ -2,7 +2,7 @@
 
 // Import your images
 import Aiagnet from "@/app/components/images/kitchen.png"; 
-import AiVison from "@/app/components/images/podcast.png"; // Correct the import path
+import AiVison from "@/app/components/images/podcast.png";
 import Article from "@/app/components/images/ArticleSift.png";
 import Diabetes from "@/app/components/images/Diabetes.png";
 import Lablab from "@/app/components/images/Lablab.png";
@@ -10,43 +10,44 @@ import Leetcode from "@/app/components/images/Leetcode.png";
 import Newsnexus from "@/app/components/images/NewNexus.png";
 import Voiceto from "@/app/components/images/Voicetovoice.png";
 import Geminichatbot from "@/app/components/images/discord.png";
+import Image from 'next/image';
 
 export default function Projects() {
   const projects = [
     {
       title: 'Article Sift',
       image: Article, // Specific image for this project
-      description: 'A web app for managing News Links to got short news summaries using AI and language translator',
+      description: 'A web app for managing News Links to get short news summaries using AI and language translator',
       technologies: ['AIML', 'llama', 'Streamlit'],
     },
     {
       title: 'Smart Kitchen',
       image: Aiagnet, // Specific image for this project
-      description: "A simple app for a hotel to manage it's customers using new user demands to fullfill them.",
+      description: "A simple app for a hotel to manage its customers using new user demands to fulfill them.",
       technologies: ['CSS', 'Bootstrap', 'Javascript'],
     },
     {
       title: 'Diabetes Prediction',
       image: Diabetes, // Specific image for this project
-      description: 'An app which fully guide diabetes patient about his Diabetes level and guide about how they could recover ',
-      technologies: ['Python', 'Streamlit', 'Anthropic', ],
+      description: 'An app that guides diabetes patients about their condition and recovery suggestions.',
+      technologies: ['Python', 'Streamlit', 'Anthropic'],
     },
     {
       title: 'Podcast Generator',
       image: AiVison, // Specific image for this project
-      description: 'An app which could help bore people to feel them better by chating with machines  .',
-      technologies: ['HTML', 'CSS', 'Bootstrap','Javascript'],
+      description: 'An app that helps people engage by chatting with machines.',
+      technologies: ['HTML', 'CSS', 'Bootstrap', 'Javascript'],
     },
     {
       title: 'Lablab Hackathons',
       image: Lablab, // Specific image for this project
-      description: 'Participate in multiple hacathons and lablab.ai and also got good positions in them.',
-      technologies: ['Python', 'Stramlit', 'HuggingFace'],
+      description: 'Participation in multiple hackathons at lablab.ai, achieving good positions.',
+      technologies: ['Python', 'Streamlit', 'HuggingFace'],
     },
     {
       title: 'Leetcode Practice',
       image: Leetcode, // Specific image for this project
-      description: "I'm doing LeetCode with DSA, and trying to improve my logical thinking in this era",
+      description: "Improving my logical thinking and problem-solving skills via LeetCode and DSA.",
       technologies: ['DSA', 'NeetCode.io', 'Python'],
     },
     {
@@ -58,13 +59,13 @@ export default function Projects() {
     {
       title: 'Voice to Voice Chatbot',
       image: Voiceto, // Specific image for this project
-      description: 'Voice chatbot for real-time communication.afh',
-      technologies: ['AIML', 'STReamlit', 'OpenAi','gpt4o'],
+      description: 'Voice chatbot for real-time communication.',
+      technologies: ['AIML', 'Streamlit', 'OpenAi', 'gpt-4'],
     },
     {
       title: "Discord App",
       image: Geminichatbot, // Specific image for this project
-      description: 'A Clone of Discord app',
+      description: 'A Discord clone app.',
       technologies: ['Javascript', 'CSS', 'Bootstrap'],
     }
   ];
@@ -75,7 +76,13 @@ export default function Projects() {
       <div style={styles.gridContainer}>
         {projects.map((project, index) => (
           <div key={index} style={styles.projectCard}>
-            <img src={project.image.src} alt={project.title} style={styles.projectImage} />
+            <Image
+              src={project.image}
+              alt={project.title}  // Ensure that all images have appropriate alt text
+              style={styles.projectImage}
+              width={300}  // Specify width for the image
+              height={200} // Specify height for the image
+            />
             <div style={styles.projectDescription}>
               <h2 style={styles.projectTitle}>{project.title}</h2>
               <p>{project.description}</p>
@@ -117,15 +124,11 @@ const styles = {
     backgroundColor: '#1a1a1a',
     borderRadius: '8px',
     overflow: 'hidden',
-    // padding: '15px',
     margin: '10px',
-
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
     border: '1px solid #333',
   },
   projectImage: {
-    width: '100%',
-    height: '200px',
     objectFit: 'cover',
   },
   projectDescription: {
