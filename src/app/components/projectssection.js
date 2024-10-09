@@ -16,57 +16,57 @@ export default function Projects() {
   const projects = [
     {
       title: 'Article Sift',
-      image: Article, // Specific image for this project
-      description: 'A web app for managing News Links to get short news summaries using AI and language translator',
-      technologies: ['AIML', 'llama', 'Streamlit'],
+      image: Article,
+      description: 'A web app for managing news links to get short news summaries using AI and a language translator.',
+      technologies: ['AIML', 'Llama', 'Streamlit'],
     },
     {
       title: 'Smart Kitchen',
-      image: Aiagnet, // Specific image for this project
+      image: Aiagnet,
       description: "A simple app for a hotel to manage its customers using new user demands to fulfill them.",
-      technologies: ['CSS', 'Bootstrap', 'Javascript'],
+      technologies: ['CSS', 'Bootstrap', 'JavaScript'],
     },
     {
       title: 'Diabetes Prediction',
-      image: Diabetes, // Specific image for this project
-      description: 'An app that guides diabetes patients about their condition and recovery suggestions.',
+      image: Diabetes,
+      description: 'An app that guides diabetes patients about their condition and offers recovery suggestions.',
       technologies: ['Python', 'Streamlit', 'Anthropic'],
     },
     {
       title: 'Podcast Generator',
-      image: AiVison, // Specific image for this project
+      image: AiVison,
       description: 'An app that helps people engage by chatting with machines.',
-      technologies: ['HTML', 'CSS', 'Bootstrap', 'Javascript'],
+      technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
     },
     {
       title: 'Lablab Hackathons',
-      image: Lablab, // Specific image for this project
+      image: Lablab,
       description: 'Participation in multiple hackathons at lablab.ai, achieving good positions.',
       technologies: ['Python', 'Streamlit', 'HuggingFace'],
     },
     {
       title: 'Leetcode Practice',
-      image: Leetcode, // Specific image for this project
+      image: Leetcode,
       description: "Improving my logical thinking and problem-solving skills via LeetCode and DSA.",
       technologies: ['DSA', 'NeetCode.io', 'Python'],
     },
     {
       title: 'NewsNexus',
-      image: Newsnexus, // Specific image for this project
+      image: Newsnexus,
       description: 'A news aggregation and analysis platform.',
       technologies: ['Google Custom API', 'Streamlit', 'Llama'],
     },
     {
       title: 'Voice to Voice Chatbot',
-      image: Voiceto, // Specific image for this project
+      image: Voiceto,
       description: 'Voice chatbot for real-time communication.',
-      technologies: ['AIML', 'Streamlit', 'OpenAi', 'gpt-4'],
+      technologies: ['AIML', 'Streamlit', 'OpenAI', 'gpt-4'],
     },
     {
       title: "Discord App",
-      image: Geminichatbot, // Specific image for this project
+      image: Geminichatbot,
       description: 'A Discord clone app.',
-      technologies: ['Javascript', 'CSS', 'Bootstrap'],
+      technologies: ['JavaScript', 'CSS', 'Bootstrap'],
     }
   ];
 
@@ -82,6 +82,7 @@ export default function Projects() {
               style={styles.projectImage}
               width={300}  // Specify width for the image
               height={200} // Specify height for the image
+              priority // Preload images for better performance
             />
             <div style={styles.projectDescription}>
               <h2 style={styles.projectTitle}>{project.title}</h2>

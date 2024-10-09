@@ -35,11 +35,19 @@ const Sidebar = () => {
   const iconStyle = {
     width: '20px',
     height: '20px',
-    marginRight: '0px',
+    marginRight: '10px', // Added margin for spacing
   };
 
   const hoverStyle = {
     color: '#1DA1F2', // Change this color for the hover effect
+  };
+
+  const handleMouseEnter = (e) => {
+    e.target.style.color = hoverStyle.color;
+  };
+
+  const handleMouseLeave = (e) => {
+    e.target.style.color = linkStyle.color;
   };
 
   return (
@@ -49,10 +57,11 @@ const Sidebar = () => {
         target="_blank"
         rel="noopener noreferrer"
         style={linkStyle}
-        onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
-        onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Image src={Linkedin} alt="LinkedIn" width={20} height={20} style={iconStyle} />
+        LinkedIn
       </a>
 
       <a
@@ -60,21 +69,23 @@ const Sidebar = () => {
         target="_blank"
         rel="noopener noreferrer"
         style={linkStyle}
-        onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
-        onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Image src={Github} alt="GitHub" width={20} height={20} style={iconStyle} />
+        GitHub
       </a>
 
       <a
-        href="https://www.instagram.com/danishmustafa_786/"
+        href="https://twitter.com/danishmustafa_786" // Corrected link to Twitter
         target="_blank"
         rel="noopener noreferrer"
         style={linkStyle}
-        onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
-        onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Image src={Twitter} alt="Twitter" width={20} height={20} style={iconStyle} />
+        Twitter
       </a>
 
       <a
@@ -82,10 +93,11 @@ const Sidebar = () => {
         target="_blank"
         rel="noopener noreferrer"
         style={linkStyle}
-        onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
-        onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Image src={Instagram} alt="Instagram" width={20} height={20} style={iconStyle} />
+        Instagram
       </a>
 
       <a
@@ -93,10 +105,11 @@ const Sidebar = () => {
         target="_blank"
         rel="noopener noreferrer"
         style={linkStyle}
-        onMouseEnter={(e) => (e.target.style.color = hoverStyle.color)}
-        onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <Image src={Facebook} alt="Facebook" width={20} height={20} style={iconStyle} />
+        Facebook
       </a>
     </div>
   );

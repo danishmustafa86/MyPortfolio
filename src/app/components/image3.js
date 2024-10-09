@@ -10,7 +10,7 @@ const ImageComponent = ({ alt = "Background Image" }) => {
     <div style={styles.container}>
       <Image 
         src={bgImage} // Use the imported background image
-        alt={alt} // Use the passed or default alt value
+        alt="Beautiful scenic background" // Random alt text for the background image
         fill // Next.js 13+ optimization (replaces layout="fill")
         style={{ objectFit: "cover" }} // Style for responsive image
         className="responsive-image" 
@@ -28,7 +28,7 @@ const ImageComponent = ({ alt = "Background Image" }) => {
           {/* Profile Picture */}
           <Image 
             src={profilePic} // Use the imported profile image
-            alt="Profile Picture" // Alt text for accessibility
+            alt="Danish Mustafa's profile picture" // Random alt text for the profile picture
             width={300} // Specify width
             height={300} // Specify height
             style={styles.profilePic}

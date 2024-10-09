@@ -1,12 +1,8 @@
 "use client";
 import { useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 
-// import Navbar from "@/app/components/navbar";
-// import Footer from "@/app/components/footer";// Your background image
-
-
-
+// Define your styles here
 const styles = {
   container: {
     maxWidth: '600px',
@@ -95,7 +91,6 @@ export default function Contact() {
 
   return (
     <div style={styles.container}>
-      {/* <Navbar /> */}
       <h1 style={styles.title}>Contact Via Mail</h1>
       <form onSubmit={handleSubmit}>
         <div style={styles.formGroup}>
@@ -137,7 +132,6 @@ export default function Contact() {
           {isSubmitting ? 'Sending...' : 'Submit'}
         </button>
       </form>
-      {/* <Footer/> */}
     </div>
   );
 }

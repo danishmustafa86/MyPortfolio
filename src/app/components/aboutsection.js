@@ -1,16 +1,15 @@
-"use client"
-// import Navbar from "@/app/components/navbar";
-// import Footer from "@/app/components/footer";// Your background image
+"use client";
 
 import { useState } from 'react';
-import Image from 'next/image'
-
+import Image from 'next/image';
+// import Navbar from "@/app/components/navbar";
+// import Footer from "@/app/components/footer"; // Uncomment if using Navbar and Footer
 
 export default function About() {
   const [skills] = useState([
-    'Machine Learning', 'Web Development', 'AI Solutions', 'Data Science', 
-    'DSA', 'LeetCode', 'Teaching DSA', 
-    'Leading', 'Deep Learning', 'Mobile Development', 'Backend Engineering', 
+    'Machine Learning', 'Web Development', 'AI Solutions', 'Data Science',
+    'DSA', 'LeetCode', 'Teaching DSA',
+    'Leading', 'Deep Learning', 'Mobile Development', 'Backend Engineering',
     'Frontend Engineering'
   ]);
 
@@ -24,12 +23,13 @@ export default function About() {
           <div style={styles.descriptionDiv}>
             <h2 style={styles.smallTitle}>Who am I?</h2>
             <p style={styles.smallDescription}>
-            I am a student at University of Agriculture Faisalabad Pakistan in 3rd semester BS(Software Engineering) and a student at Standford University: Code In Place 2024, CS 50X puzzle day winner organized by HardWard University, Meta Hacker 2024 Qualifier, partticipate in multiple hackathons, a Web Designer, a leetcode programmer with 300+ problems solved , a student at PIAIC, learning Generative AI and Machine Learning.            </p>
+              I am a student at University of Agriculture Faisalabad, Pakistan, in my 3rd semester of BS (Software Engineering) and a student at Stanford University: Code In Place 2024. I am a CS50X puzzle day winner organized by Harvard University, a Meta Hacker 2024 Qualifier, and have participated in multiple hackathons. I am also a web designer and a LeetCode programmer with over 300 problems solved. Additionally, I am a student at PIAIC, learning Generative AI and Machine Learning.
+            </p>
             <p style={styles.smallDescription}>
-              My journey in tech has allowed me to explore various domains such as Web Development, DSA, LeetCode, Deep Learning, Natural Language Processing, Computer Vision and teaching students. I am always looking to enhance my knowledge by learning new technologies and applying them to solve real-world problems. I believe that technology has the power to make a significant impact in the world, and I strive to be at the forefront of that change.
+              My journey in tech has allowed me to explore various domains such as Web Development, DSA, LeetCode, Deep Learning, Natural Language Processing, Computer Vision, and teaching students. I am always looking to enhance my knowledge by learning new technologies and applying them to solve real-world problems. I believe that technology has the power to make a significant impact in the world, and I strive to be at the forefront of that change.
             </p>
           </div>
-        <div className = "quote" style={styles.quoteDiv}>
+          <div className="quote" style={styles.quoteDiv}>
             <blockquote style={styles.quote}>
               "The best way to predict the future is to create it."
             </blockquote>
@@ -109,7 +109,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    
   },
   skillsTitle: {
     fontSize: '24px',

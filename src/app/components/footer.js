@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image'; // Importing the Next.js Image component
 
+// Use dynamic imports for images to avoid issues with build-time resolution
 import MyImage from "@/app/components/images/myimage.jpg";
 import Facebook from "@/app/components/images/facebook.png";
 import Twitter from "@/app/components/images/tweet.png";
@@ -61,24 +62,24 @@ const Footer = () => {
     <footer style={footerStyle}>
       <div style={sectionStyle}>
         <div style={aboutMeStyle}>
-          <Image src={MyImage} alt="About Me" width={50} height={50} style={imageStyle} /> {/* Use Next.js Image component */}
+          <Image src={MyImage} alt="About Me" width={50} height={50} style={imageStyle} />
           <p>I'm a passionate developer who loves coding and problem-solving!</p>
         </div>
         <div style={{ display: 'flex', justifyContent: 'right', marginRight: "40px", alignItems: 'left' }}>
           <a href="https://www.linkedin.com/in/danishmustafa86/" target="_blank" rel="noopener noreferrer">
-            <Image src={Linkedin} alt="LinkedIn" width={30} height={30} style={iconStyle} /> {/* Use Next.js Image component */}
+            <Image src={Linkedin} alt="LinkedIn" width={30} height={30} style={iconStyle} />
           </a>
           <a href="https://github.com/danishmustafa86" target="_blank" rel="noopener noreferrer">
-            <Image src={Github} alt="Github" width={30} height={30} style={iconStyle} /> {/* Use Next.js Image component */}
+            <Image src={Github} alt="Github" width={30} height={30} style={iconStyle} />
           </a>
           <a href="https://www.instagram.com/danishmustafa_786" target="_blank" rel="noopener noreferrer">
-            <Image src={Twitter} alt="Twitter" width={30} height={30} style={iconStyle} /> {/* Use Next.js Image component */}
+            <Image src={Twitter} alt="Twitter" width={30} height={30} style={iconStyle} />
           </a>
           <a href="https://www.facebook.com/danish.jajja.56" target="_blank" rel="noopener noreferrer">
-            <Image src={Facebook} alt="Facebook" width={30} height={30} style={iconStyle} /> {/* Use Next.js Image component */}
+            <Image src={Facebook} alt="Facebook" width={30} height={30} style={iconStyle} />
           </a>
           <a href="https://www.instagram.com/danishmustafa_786" target="_blank" rel="noopener noreferrer">
-            <Image src={Instagram} alt="Instagram" width={30} height={30} style={iconStyle} /> {/* Use Next.js Image component */}
+            <Image src={Instagram} alt="Instagram" width={30} height={30} style={iconStyle} />
           </a>
         </div>
       </div>

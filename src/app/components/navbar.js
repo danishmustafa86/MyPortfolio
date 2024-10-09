@@ -16,7 +16,13 @@ const Navbar = () => {
     <nav style={styles.navbar}>
       <div style={styles.navbarContainer}>
         {/* Use Next.js Image for optimized loading */}
-        <Image src={myImage} alt="Profile" width={50} height={50} style={styles.profileImage} />
+        <Image 
+          src={myImage} 
+          alt="Profile image of Danish Mustafa" // Updated alt text
+          width={50} 
+          height={50} 
+          style={styles.profileImage} 
+        />
         <div style={styles.navbarLogo}>My Portfolio</div>
         <button style={styles.hamburger} onClick={toggleMenu}>
           <span style={styles.hamburgerLine}></span>
