@@ -72,6 +72,14 @@ const Navbar = () => {
             padding: 15px;
           }
         }
+        @media (min-width: 769px) {
+          .hamburger {
+            display: none;
+          }
+          .navbarLinks {
+            display: flex;
+          }
+        }
       `}</style>
     </nav>
   );
@@ -105,6 +113,7 @@ const styles = {
     fontWeight: 'bold',
     textAlign: 'left',
     flexGrow: 1,
+    margin: "5px"
   },
   hamburger: {
     display: 'none',
