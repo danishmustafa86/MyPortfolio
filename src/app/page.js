@@ -12,7 +12,7 @@ export default function Home() {
     <div className={styles.page}>
       <Navbar />
       <Sidebar />
-      <Image alt="Description of the image" /> {/* Add meaningful alt text here */}
+      <Image alt="My Image" /> {/* Add meaningful alt text here */}
       <About />
       <Project />
       <Contact />

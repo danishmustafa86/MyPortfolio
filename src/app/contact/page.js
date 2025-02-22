@@ -112,7 +112,8 @@ export default function Contact() {
       <Navbar />
       <div style={styles.about}>
         <h1>Contact Me</h1>
-        <p>Danish is here, If you need any service, want any help or information then feel free to contact me.</p>
+        <p>Hey, I'm Danish! If you have any questions, need assistance, or want to collaborate, feel free to reach out. I'm always happy to connect and help in any way I can!</p>
+
       </div>
       <div style={styles.sectionContainer}>
         <Section />

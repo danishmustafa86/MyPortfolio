@@ -1,9 +1,9 @@
 "use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import Image from 'next/image';  // Correct Next.js image component
-import myImage from "@/app/components/images/myimage.jpg";  // Correct image import
+import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
+import myImage from "@/app/components/images/myimage.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,152 +13,86 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.navbarContainer}>
-        {/* Use Next.js Image for optimized loading */}
-        <Image 
-          src={myImage} 
-          alt="Profile image of Danish Mustafa" // Updated alt text
-          width={50} 
-          height={50} 
-          style={styles.profileImage} 
-        />
-        <div style={styles.navbarLogo}>My Portfolio</div>
-        <button style={styles.hamburger} onClick={toggleMenu}>
-          <span style={styles.hamburgerLine}></span>
-          <span style={styles.hamburgerLine}></span>
-          <span style={styles.hamburgerLine}></span>
+    <nav className="bg-gray-800 text-white p-4 flex items-center justify-between relative z-50 shadow-lg">
+      <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
+        {/* Logo and Profile Image */}
+        <div className="flex items-center space-x-4">
+          <Image
+            src={myImage}
+            alt="Profile image of Danish Mustafa"
+            width={50}
+            height={50}
+            className="rounded-full border-2 border-teal-400 hover:border-white transition-all duration-300"
+          />
+          <div className="text-xl font-bold text-teal-400 hover:text-white transition-colors duration-300">
+            Danish Mustafa
+          </div>
+        </div>
+
+        {/* Hamburger Menu (Mobile) */}
+        <button
+          className="block md:hidden focus:outline-none"
+          onClick={toggleMenu}
+        >
+          <span
+            className={`block w-6 h-0.5 bg-white mb-1 transition-transform duration-300 ${
+              isOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-white mb-1 transition-opacity duration-300 ${
+              isOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
+              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          ></span>
         </button>
-        <ul style={{ ...styles.navbarLinks, ...(isOpen ? styles.open : {}) }}>
-          <li style={styles.navItem}>
-            <Link href="/" style={styles.navLink}>Home</Link>
+
+        {/* Navigation Links */}
+        <ul
+          className={`flex-col md:flex-row md:flex md:items-center md:justify-end list-none m-0 p-0 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent transition-all duration-300 ${
+            isOpen ? "flex" : "hidden"
+          }`}
+        >
+          <li className="md:mx-2">
+            <Link
+              href="/"
+              className="block py-2 px-4 text-center md:inline-block hover:text-teal-400 transition-colors duration-300"
+            >
+              Home
+            </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link href="/about" style={styles.navLink}>About</Link>
+          <li className="md:mx-2">
+            <Link
+              href="/about"
+              className="block py-2 px-4 text-center md:inline-block hover:text-teal-400 transition-colors duration-300"
+            >
+              About
+            </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link href="/projects" style={styles.navLink}>Projects</Link>
+          <li className="md:mx-2">
+            <Link
+              href="/projects"
+              className="block py-2 px-4 text-center md:inline-block hover:text-teal-400 transition-colors duration-300"
+            >
+              Projects
+            </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link href="/contact" style={styles.navLink}>Contact</Link>
+          <li className="md:mx-2">
+            <Link
+              href="/contact"
+              className="block py-2 px-4 text-center md:inline-block hover:text-teal-400 transition-colors duration-300"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
-
-      {/* Media queries for responsive navbar */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .navbarLinks {
-            display: none;
-          }
-          .navbarLinks.open {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-          }
-          .hamburger {
-            display: flex;
-          }
-          .navItem {
-            width: 100%;
-          }
-          .navLink {
-            text-align: center;
-            padding: 15px;
-          }
-        }
-        @media (min-width: 769px) {
-          .hamburger {
-            display: none;
-          }
-          .navbarLinks {
-            display: flex;
-          }
-        }
-      `}</style>
     </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    backgroundColor: '#333',
-    color: 'white',
-    padding: '10px 20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    position: 'relative',
-    zIndex: 1000,
-  },
-  navbarContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-    maxWidth: '1200px',
-    margin: '0 auto',
-  },
-  profileImage: {
-    borderRadius: '50%',
-    transition: 'transform 0.3s',
-  },
-  navbarLogo: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    textAlign: 'left',
-    flexGrow: 1,
-    margin: "5px"
-  },
-  hamburger: {
-    display: 'none',
-    flexDirection: 'column',
-    background: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-  },
-  hamburgerLine: {
-    width: '25px',
-    height: '3px',
-    backgroundColor: 'white',
-    margin: '4px 0',
-  },
-  navbarLinks: {
-    display: 'flex',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-    flexGrow: 1,
-    justifyContent: 'flex-end',
-  },
-  navItem: {
-    flex: '1',
-    textAlign: 'center',
-  },
-  navLink: {
-    color: 'white',
-    textDecoration: 'none',
-    padding: '10px 15px',
-    fontSize: '1.1rem',
-    fontWeight: 'bold',
-    transition: 'color 0.3s',
-  },
-  open: {
-    display: 'flex',
-    position: 'absolute',
-    top: '60px',
-    left: '0',
-    width: '100%',
-    backgroundColor: '#333',
-    flexDirection: 'column',
-    zIndex: 100,
-    padding: '10px 0',
-  },
 };
 
 export default Navbar;
